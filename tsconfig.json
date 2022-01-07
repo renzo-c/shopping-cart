@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+      "typeRoots" : ["node_modules/@types", "src/types"],
       "lib": ["dom", "dom.iterable", "esnext"],
       "allowJs": true,
       "allowSyntheticDefaultImports": true,
@@ -11,7 +12,11 @@
       "resolveJsonModule": true,
       "isolatedModules": true,
       "noEmit": false,
-      "jsx": "react"
+      "jsx": "react",
+      "baseUrl": "./src",
+      "paths": {
+        "@styles/*":["./styles/*"],
+      }
     },
     "include": ["src"]
   }

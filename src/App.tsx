@@ -1,13 +1,22 @@
 import React from 'react';
-import "./app.css";
+import { DeliveryEstimator, Wrapper, SearchContainer, OrderSummary } from './Components';
+import { Grid } from '@mui/material';
 
 const App = () => {
   console.log(process.env.NODE_ENV);
 
   return (
-    <div>
-      <p className="test">Welcome to React!!!</p>
-    </div>
+    <Wrapper>
+      <Grid container>
+        <Grid item xs={6}>
+          <SearchContainer />
+        </Grid>
+        <Grid item xs={6}>
+          <DeliveryEstimator />
+          <OrderSummary />
+        </Grid>
+      </Grid>
+    </Wrapper>
   );
 };
 
