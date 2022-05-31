@@ -2,6 +2,19 @@ import React from 'react';
 import useStyles from './resultBox-style';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Typography } from '@mui/material';
+import { gql, useQuery } from '@apollo/client';
+
+const PRODUCTS = gql`
+  query ListProducts {
+    getProducts {
+      name
+      description
+      unitPrice
+      imageUrl
+      price
+    }
+  }
+`;
 
 interface ResultBoxProps {
   products: Array<any>;
@@ -9,6 +22,12 @@ interface ResultBoxProps {
 
 const ResultBox: React.FC<ResultBoxProps> = ({ products }) => {
   const classes = useStyles();
+
+  const { loading, error, data } = useQuery(PRODUCTS);
+console.log({data})
+  if (loading) return <div>Loading...</div>;
+
+  if (error) return <div>{`ERROR ${error.message}`}</div>;
 
   const renderProducts = () => {
     if (!products.length) {
