@@ -20,7 +20,7 @@ const PRODUCTS = gql`
 const App = () => {
   console.log(process.env.NODE_ENV);
   const { loading, error, data } = useQuery(PRODUCTS);
-
+console.log(data)
   if (loading) return <div>Loading...</div>;
 
   if (error) return <div>{`ERROR ${error.message}`}</div>;
