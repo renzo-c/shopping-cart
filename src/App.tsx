@@ -1,22 +1,29 @@
 import React from 'react';
-import { DeliveryEstimator, Wrapper, SearchContainer, OrderSummary } from './Components';
+import { DeliveryEstimator, SearchContainer, OrderSummary } from './Components';
 import { Grid } from '@mui/material';
+import { Layout } from 'Components';
+import GlobalStyles from './styles';
 
 const App = () => {
   console.log(process.env.NODE_ENV);
 
   return (
-    <Wrapper>
-      <Grid container>
-        <Grid item xs={6}>
-          <SearchContainer />
+    // <Wrapper>
+    <>
+      <GlobalStyles />
+      <Layout>
+        <Grid container>
+          <Grid item xs={6}>
+            <SearchContainer />
+          </Grid>
+          <Grid item xs={6}>
+            <DeliveryEstimator />
+            <OrderSummary />
+          </Grid>
         </Grid>
-        <Grid item xs={6}>
-          <DeliveryEstimator />
-          <OrderSummary />
-        </Grid>
-      </Grid>
-    </Wrapper>
+      </Layout>
+    </>
+    // </Wrapper>
   );
 };
 
