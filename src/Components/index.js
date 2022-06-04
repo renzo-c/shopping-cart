@@ -4,3 +4,4 @@ export { ResultBox } from './ResultBox';
 export { SearchBox } from './SearchBox';
 export { SearchContainer } from './SearchContainer';
 export { Wrapper } from './Wrapper';
+export { default as Layout } from './Layout';
