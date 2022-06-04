@@ -13,10 +13,10 @@
       "isolatedModules": true,
       "noEmit": false,
       "jsx": "react",
-      "baseUrl": "./src",
+      "baseUrl": "src",
       "paths": {
         "@styles/*":["./styles/*"],
-      }
+      },
     },
     "include": ["src"]
   }

@@ -1,18 +1,27 @@
 import React from 'react';
-import { Input } from '@mui/material';
-import useStyles from './searchBox-style';
+import styled from 'styled-components';
+import { colors, baseBoxStyles } from '../../styles';
 
-const SearchBox = () => {
-  const classes = useStyles();
+interface SearchBoxProps {
+  term?: string;
+  onChangeTerm(term: string): void;
+}
+
+const SearchBox: React.FC<SearchBoxProps> = ({ term, onChangeTerm }) => {
   return (
-    <div className={classes.root}>
-      <Input
-        disableUnderline
-        className={classes.input}
-        placeholder="Search products ..."
-      />
-    </div>
+    <Input
+      inputColor={colors.text}
+      placeholder="Search products ..."
+      value={term}
+      type="test"
+      onChange={(e) => onChangeTerm(e.target.value)}
+    />
   );
 };
+
+const Input = styled.input<{ inputColor?: string }>`
+  flex: 1;
+  ${baseBoxStyles}
+`;
 
 export default SearchBox;

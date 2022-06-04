@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, css } from 'styled-components';
 
 export const widths = {
   largePageWidth: 1600,
@@ -13,7 +13,9 @@ export const colors = {
   background: '#D8E6E4',
   //   grey: SKColors.silver.dark,
   text: '#000',
-  textHover: '#606665'
+  white: 'white',
+  textHover: '#606665',
+  focus: '#416660'
   //   textSecondary: SKColors.grey.dark,
 };
 
@@ -56,6 +58,22 @@ const GlobalStyles = createGlobalStyle`
         text-transform: uppercase;
         letter-spacing: 4
       }
+`;
+
+export const baseBoxStyles = css`
+  padding: 1em;
+  color: ${(props) => props.inputColor || 'black'};
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 20%);
+  &:focus {
+    outline-color: ${colors.focus};
+  }
+`;
+
+export const baseContainerStyles = css`
+  display: flex;
+  flex: 1;
 `;
 
 export default GlobalStyles;

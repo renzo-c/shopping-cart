@@ -1,6 +1,7 @@
 import React from 'react';
-import { DeliveryEstimator, SearchContainer, OrderSummary } from './Components';
-import { Grid } from '@mui/material';
+// import { DeliveryEstimator, SearchContainer, OrderSummary } from './Components';
+import { SearchContainer } from './Components';
+// import { Grid } from '@mui/material';
 import { Layout } from 'Components';
 import GlobalStyles from './styles';
 import { gql, useQuery } from '@apollo/client';
@@ -20,7 +21,7 @@ const PRODUCTS = gql`
 const App = () => {
   console.log(process.env.NODE_ENV);
   const { loading, error, data } = useQuery(PRODUCTS);
-console.log(data)
+  console.log(data);
   if (loading) return <div>Loading...</div>;
 
   if (error) return <div>{`ERROR ${error.message}`}</div>;
@@ -29,9 +30,12 @@ console.log(data)
     // <Wrapper>
     <>
       <GlobalStyles />
-      <Layout>
-        <div>this is a test</div>
-        <Grid container>
+      <Layout grid>
+        <SearchContainer />
+        {/* <div style={{width:'100px'}}/>
+        <SearchContainer /> */}
+
+        {/* <Grid container>
           <Grid item xs={6}>
             <SearchContainer />
           </Grid>
@@ -39,7 +43,7 @@ console.log(data)
             <DeliveryEstimator />
             <OrderSummary />
           </Grid>
-        </Grid>
+        </Grid> */}
       </Layout>
     </>
     // </Wrapper>

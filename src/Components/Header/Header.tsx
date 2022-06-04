@@ -83,7 +83,7 @@ const Title = styled.div({
   div: {
     fontSize: '0.9em',
     lineHeight: '1em',
-    paddingLeft: 2
+    // paddingLeft: 2
   },
   borderLeft: '1px solid black',
   margin: '0 15px',
