@@ -19,23 +19,23 @@ export const colors = {
 
 const GlobalStyles = createGlobalStyle`
       html, body {
-        height: '100%'
+        height: 100%
       }
       body {
         margin: 0;
         padding: 0;
-        font-family: "'Source Sans Pro', sans-serif";
+        font-family: "Source Sans Pro, sans-serif";
         background-color: #D8E6E4;
         color: #000
       }
-      #root {
-        display: 'flex';
-        flex-direction: 'column';
-        min-height: '100%';
-        background-image: 'url("/lunatic-panda.png")'
+      #app {
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+        background-image: url("/lunatic-panda.png")
       }
       * {
-        box-sizing: 'border-box'
+        box-sizing: border-box
       }
       h1, h2, h3, h4, h5, h6 {
         margin: 0;
@@ -53,7 +53,7 @@ const GlobalStyles = createGlobalStyle`
       }
       h5 {
         font-size: 16;
-        text-transform: 'uppercase';
+        text-transform: uppercase;
         letter-spacing: 4
       }
 `;

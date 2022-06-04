@@ -30,6 +30,7 @@ console.log(data)
     <>
       <GlobalStyles />
       <Layout>
+        <div>this is a test</div>
         <Grid container>
           <Grid item xs={6}>
             <SearchContainer />
